@@ -1,28 +1,21 @@
 <template>
     <div id="app">
-        <Header />
-        <div class="c-container">
-            <el-tabs :tab-position="tabPosition">
-                <el-tab-pane label="关于我们">
-                    <about/>
-                </el-tab-pane>
-                <el-tab-pane label="加入我们">
-                    <team/>
-                </el-tab-pane>
-                <el-tab-pane label="合作伙伴">
-                    <thanks/>
-                </el-tab-pane>
-                <el-tab-pane label="隐私政策">
-                    <privacy/>
-                </el-tab-pane>
-                <el-tab-pane label="用户协议">
-                    <licence/>
-                </el-tab-pane>
-                <el-tab-pane label="创作公约">
-                    <treaty/>
-                </el-tab-pane>
-            </el-tabs>
-        </div>
+        <Header></Header>
+        <Breadcrumb name="频道名称" slug="slug" root="/slug" publishEnable="true">
+            <img slot="logo" svg-inline src="./assets/img/logo.svg" />
+            <!-- <Info /> -->
+        </Breadcrumb>
+        <LeftSidebar>
+            <!-- <Nav /> -->
+        </LeftSidebar>
+        <Main :withoutRight="false">
+            primary content
+            <!-- <Comment post-id="100"/> -->
+            <RightSidebar>
+                <!-- <Extend/> -->
+            </RightSidebar>
+            <Footer></Footer>
+        </Main>
     </div>
 </template>
 
@@ -46,12 +39,12 @@ export default {
     methods: {},
     mounted: function () {},
     components: {
-        about,
-        team,
-        thanks,
-        privacy,
-        licence,
-        treaty
+        // about,
+        // team,
+        // thanks,
+        // privacy,
+        // licence,
+        // treaty
     },
 };
 </script>
