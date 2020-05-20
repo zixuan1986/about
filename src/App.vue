@@ -2,23 +2,20 @@
 	<div id="app">
 		<Header />
 		<div class="c-container">
+			<div class="c-nav">
+				<ul>
+					<li v-for="(item, index) in navs" :key="index" :class="{ atv: atv == index }" @click="atv = index">
+						{{ item }}
+					</li>
+				</ul>
+			</div>
 			<div class="c-box">
-				<div class="c-nav">
-					<ul>
-						<li v-for="(item, index) in navs" :key="index" :class="{ atv: atv == index }" @click="atv = index">
-							{{ item }}
-						</li>
-					</ul>
-				</div>
-
-				<div class="c-con">
-					<div class="box" v-show="atv == 0"><about /></div>
-					<div class="box"  v-show="atv == 1"><team /></div>
-					<div class="box"  v-show="atv == 2"><thanks /></div>
-					<div class="box"  v-show="atv == 3"><privacy /></div>
-					<div class="box"  v-show="atv == 4"><licence /></div>
-					<div class="box"  v-show="atv == 5"><treaty /></div>
-				</div>
+				<div class="box" v-show="atv == 0"><about /></div>
+				<div class="box" v-show="atv == 1"><team /></div>
+				<div class="box" v-show="atv == 2"><thanks /></div>
+				<div class="box" v-show="atv == 3"><privacy /></div>
+				<div class="box" v-show="atv == 4"><licence /></div>
+				<div class="box" v-show="atv == 5"><treaty /></div>
 			</div>
 		</div>
 	</div>
@@ -58,91 +55,68 @@ export default {
 
 <style lang="less">
 @import './assets/css/common.less';
-body {
-	background: #f6f8fa;
-}
 </style>
 <style lang="less" scoped>
 @width: 1000px;
-@height: 700px;
-@h1: 438px;
-@h2: 698px;
 @nav: #4d4d4f;
-@con: #f0f0f0;
+@con: #fafafa;
 .c-container {
-	width: @width;
-	padding: 50px;
-	margin: 0 auto;
-	.c-box {
-		height: @height;
-		overflow: hidden;
-		position: relative;
-		background: #fff;
-		border: 1px solid #c3c6d5;
+	position: relative;
+}
+.c-nav {
+	position: relative;
+	height: 100%;
+	ul {
+		width: 260px;
+		position: absolute;
+		z-index: 1;
+		background: url(https://console.cnyixun.com/img/common/jx3box_white.svg) no-repeat 0 20px @nav;
+		padding: 280px 0 180px 0;
 		border-radius: 10px;
-		.c-nav {
-			position: absolute;
-			z-index: 1;
-			width: 240px;
-			height: @h1;
-			background: url(https://console.cnyixun.com/img/common/jx3box_white.svg) no-repeat 0 20px @nav;
-			left: 1px;
-			top: 1px;
-			background-size: contain;
-			padding: 260px 0 0 0;
-			border-top-left-radius: 10px;
-			border-bottom-left-radius: 10px;
-			ul {
-				list-style-type: none;
-				border-top: 1px solid #d1d1d1;
-				border-bottom: 1px solid #d1d1d1;
-				padding: 0;
-				.atv + li {
-					border-top: 0;
-				}
-				li {
-					width: 200px;
-					margin: 0 auto;
-					line-height: 50px;
-					cursor: pointer;
-					color: #f0f0f0;
-					text-indent: 66px;
-					border-top: 1px solid #ddd;
-					&.atv {
-						color: #fff;
-						font-weight: bold;
-						width: 270px;
-						text-indent: 86px;
-						border-bottom: 1px solid #ddd;
-						background: @nav;
-						border-top-right-radius: 5px;
-						border-bottom-right-radius: 5px;
-						background: url(https://console.cnyixun.com/img/footer/logo2.svg) no-repeat 240px center @nav;
-						background-size: 24px;
-					}
-					&:first-child {
-						border-top: 0;
-                    }
-                    &:last-child{
-                        border-bottom: 0;
-                    }
-				}
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+		list-style-type: none;
+		.atv + li {
+			border-top: 0;
+		}
+		li {
+			width: 200px;
+			margin: 0 auto;
+			line-height: 50px;
+			cursor: pointer;
+			color: #f9f9f9;
+			text-indent: 66px;
+			border-top: 1px solid #ddd;
+			&.atv {
+				color: #fff;
+				font-weight: bold;
+				width: 320px;
+				text-indent: 96px;
+				border-bottom: 1px solid #ddd;
+				background: @nav;
+				border-top-right-radius: 5px;
+				border-bottom-right-radius: 5px;
+				background: url(https://console.cnyixun.com/img/footer/logo2.svg) no-repeat 275px center @nav;
+				background-size: 24px;
+			}
+			&:last-child {
+				border-bottom: 1px solid #ddd;
 			}
 		}
-		.c-con {
-			width: 960px;
-			margin-left: 20px;
-			height: @h2;
-			position: absolute;
-			background: @con;
-			top: 1px;
-			right: 1px;
-			border-top-right-radius: 10px;
-            border-bottom-right-radius: 10px;
-            .box{
-                padding:0 10px 0 256px;
-            }
-		}
+	}
+}
+.c-box {
+	position: absolute;
+	background: @con;
+	width: 100%;
+	min-height: 700px;
+	top: 100px;
+	bottom: 100px;
+	border: 1px solid #ddd;
+	border-right: 0;
+	border-left: 0;
+	.box {
+		padding: 0 10px 0 360px;
 	}
 }
 </style>
