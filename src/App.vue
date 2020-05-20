@@ -1,24 +1,24 @@
 <template>
-	<div id="app">
-		<Header />
-		<div class="c-container">
-			<div class="c-nav">
-				<ul>
-					<li v-for="(item, index) in navs" :key="index" :class="{ atv: atv == index }" @click="atv = index">
-						{{ item }}
-					</li>
-				</ul>
-			</div>
-			<div class="c-box">
-				<div class="box" v-show="atv == 0"><about /></div>
-				<div class="box" v-show="atv == 1"><team /></div>
-				<div class="box" v-show="atv == 2"><thanks /></div>
-				<div class="box" v-show="atv == 3"><privacy /></div>
-				<div class="box" v-show="atv == 4"><licence /></div>
-				<div class="box" v-show="atv == 5"><treaty /></div>
-			</div>
-		</div>
-	</div>
+
+    <div id="app">
+        <Header></Header>
+        <Breadcrumb name="频道名称" slug="slug" root="/slug" publishEnable="true">
+            <img slot="logo" svg-inline src="./assets/img/logo.svg" />
+            <!-- <Info /> -->
+        </Breadcrumb>
+        <LeftSidebar>
+            <!-- <Nav /> -->
+        </LeftSidebar>
+        <Main :withoutRight="false">
+            primary content
+            <!-- <Comment post-id="100"/> -->
+            <RightSidebar>
+                <!-- <Extend/> -->
+            </RightSidebar>
+            <Footer></Footer>
+        </Main>
+    </div>
+
 </template>
 
 <script>
@@ -30,6 +30,7 @@ import licence from '@/components/licence.vue'
 import treaty from '@/components/treaty.vue'
 
 export default {
+
 	name: 'App',
 	props: [],
 	data: function() {
@@ -51,6 +52,7 @@ export default {
 		treaty,
 	},
 }
+
 </script>
 
 <style lang="less">
