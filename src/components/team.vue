@@ -6,7 +6,7 @@
 				<li v-for="i in user" :key="i.uuid" class="infinite-list-item">
 					<p>{{ i.name }}</p>
 					<p>负责：{{ i.res }}</p>
-					<p>UUID：{{ i.iiud }}</p>
+					<p>UUID：{{ i.uuid }}</p>
 					<p>邮箱：{{ i.emall }}</p>
 				</li>
 			</ul>
@@ -17,7 +17,7 @@
 				<li v-for="i in user" :key="i.uuid" class="infinite-list-item">
 					<p>{{ i.name }}</p>
 					<p>负责：{{ i.res }}</p>
-					<p>UUID：{{ i.iiud }}</p>
+					<p>UUID：{{ i.uuid }}</p>
 					<p>邮箱：{{ i.emall }}</p>
 				</li>
 			</ul>
@@ -50,11 +50,16 @@ export default {
 
 <style lang="less">
 @import '../assets/css/team.less';
+.m-content {
+	min-width: 1000px;
+	max-height: 700px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
 </style>
 <style lang="less" scoped>
 .m-content {
-	max-height: 700px;
-	overflow: scroll;
+ 
 	h2 {
 		text-align: center;
 	}

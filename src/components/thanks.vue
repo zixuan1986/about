@@ -63,15 +63,16 @@ export default {
 
 <style lang="less">
 @import '../assets/css/thanks.less';
+.m-content {
+	min-width: 1000px;
+	max-height: 700px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
 </style>
 <style lang="less" scoped>
 h2 {
 	padding-top: 30px;
-}
-.m-content {
-	overflow-x: hidden;
-	overflow-y: scroll;
-	max-height: 700px;
 }
 .m-about-contact {
 	max-width: 600px;
@@ -85,16 +86,16 @@ h2 {
 .m-about-partner {
 	text-align: center;
 	.img {
-        width: 380px;
-        height: 240px;
-    }
-    .title{
-        display: block;
-        color: #555;
-        line-height: 40px;
-        font-weight: bold;
-        height: 40px;
-    }
+		width: 380px;
+		height: 240px;
+	}
+	.title {
+		display: block;
+		color: #555;
+		line-height: 40px;
+		font-weight: bold;
+		height: 40px;
+	}
 }
 .m-about-thanks {
 	display: flex;

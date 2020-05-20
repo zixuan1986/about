@@ -71,7 +71,7 @@ export default {
 		position: absolute;
 		z-index: 1;
 		background: url(https://console.cnyixun.com/img/common/jx3box_white.svg) no-repeat 0 20px @nav;
-		padding: 280px 0 180px 0;
+		padding: 300px 0 180px 0;
 		border-radius: 10px;
 		border-top-left-radius: 0;
 		border-bottom-left-radius: 0;
