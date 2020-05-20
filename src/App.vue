@@ -117,6 +117,9 @@ export default {
 	border-left: 0;
 	.box {
 		padding: 0 10px 0 360px;
+		overflow: hidden;
+		min-width: 1360px;
+		max-height: 700px;
 	}
 }
 </style>

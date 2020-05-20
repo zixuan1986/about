@@ -50,33 +50,26 @@ export default {
 
 <style lang="less">
 @import '../assets/css/team.less';
-.m-content {
-	min-width: 1000px;
-	max-height: 700px;
-	overflow-x: hidden;
-	overflow-y: scroll;
-}
 </style>
 <style lang="less" scoped>
 .m-content {
- 
 	h2 {
 		text-align: center;
 	}
 	.m-about-team {
 		display: flex;
-		justify-content: space-around;
 		flex-wrap: wrap;
 		width: 100%;
 		list-style: none;
 		li {
 			font-size: 14px;
+			min-width: 240px;
+			width: 320px;
 			color: #555;
 			line-height: 40px;
 			border: 1px solid #ddd;
-			width: 20%;
-			padding: 10px 1%;
-			margin: 10px 20px;
+			padding: 10px;
+			margin: 10px;
 			p {
 				padding: 0;
 				margin: 0;

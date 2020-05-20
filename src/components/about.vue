@@ -83,6 +83,9 @@ export default {
 </style>
 <style lang="less" scoped>
 .m-content {
+	width: calc(100% + 30px);
+}
+.m-content {
 	h1,
 	.m-about-intro {
 		text-align: center;
